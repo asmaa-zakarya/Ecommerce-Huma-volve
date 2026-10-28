@@ -2,7 +2,7 @@ import 'package:dio/dio.dart';
 import 'package:ecommerce_app_huma_volve/core/constants/api_endpoints.dart';
 import 'package:ecommerce_app_huma_volve/core/api/api_manger.dart';
 
-import '../model/login_model.dart';
+import '../models/login_model.dart';
 
 class LoginService {
   ApiClient apiClient;
