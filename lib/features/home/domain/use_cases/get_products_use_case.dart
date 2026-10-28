@@ -7,6 +7,6 @@ import 'package:dartz/dartz.dart';
 class GetProductsUseCase {
   final HomeRepository homeRepository;
   GetProductsUseCase(this.homeRepository);
-  Future<Either<Failure,List<HomeProductEntity>>> invoke(int? categoryID)
-  =>homeRepository.getProducts(categoryID);
+  Future<Either<Failure,List<HomeProductEntity>>> invoke(int? categoryID,{ required int offset , required int limit})
+  =>homeRepository.getProducts(categoryID, offset: offset, limit: limit);
 }
