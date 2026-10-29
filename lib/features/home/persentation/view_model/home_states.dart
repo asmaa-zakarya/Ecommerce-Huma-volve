@@ -1,39 +1,38 @@
 import 'package:ecommerce_app_huma_volve/features/home/domain/entities/home_category_entity.dart';
 import 'package:ecommerce_app_huma_volve/features/home/domain/entities/home_product_entity.dart';
 
-abstract class HomeStats {}
+abstract class HomeStates {}
 
-class HomeInitial extends HomeStats {}
+class HomeInitial extends HomeStates {}
+//* Categories States
+class CategoriesLoadingState extends HomeStates {}
 
-class CategoriesLoading extends HomeStats {}
-
-class CategoriesSuccess extends HomeStats {
+class CategoriesSuccessState extends HomeStates {
   final List<HomeCategoryEntity> categories;
-  CategoriesSuccess(this.categories);
+  CategoriesSuccessState(this.categories);
 }
 
-class CategoriesError extends HomeStats {
+class CategoriesFailureState extends HomeStates {
   final String errorMessage;
-  CategoriesError(this.errorMessage);
+  CategoriesFailureState(this.errorMessage);
 }
 
-class ProductsLoading extends HomeStats {}
+//* Products States
+class ProductsLoadingState extends HomeStates {}
 
-class ProductsLoadingMore extends HomeStats {}
-
-class ProductsLoadingError extends HomeStats {
-  final String errorMessage;
-  ProductsLoadingError(this.errorMessage);
-}
-
-class ProductsError extends HomeStats {
-  ProductsError(this.errorMessage);
-
-  final String errorMessage;
-}
-
-class ProductsSuccess extends HomeStats {
-  ProductsSuccess(this.products);
-
+class ProductsSuccessState extends HomeStates {
   final List<HomeProductEntity> products;
+  ProductsSuccessState(this.products);
+}
+
+class ProductsFailureState extends HomeStates {
+  final String errorMessage;
+  ProductsFailureState(this.errorMessage);
+}
+
+
+class ProductsLoadingMore extends HomeStates {}
+class ProductsLoadingError extends HomeStates {
+  final String errorMessage;
+  ProductsLoadingError({required this.errorMessage});
 }

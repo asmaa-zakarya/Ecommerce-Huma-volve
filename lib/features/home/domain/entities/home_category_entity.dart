@@ -1,6 +1,9 @@
 class HomeCategoryEntity {
-  const HomeCategoryEntity({required this.id, required this.name});
-
   final int id;
   final String name;
+
+  const HomeCategoryEntity({
+    this.id=0,
+    this.name='',
+  });
 }
